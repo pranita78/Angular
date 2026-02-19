@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpServiceService } from '../http-service.service';
 
 @Component({
   selector: 'app-signup',
@@ -6,5 +7,37 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+
+  constructor(public httpService: HttpServiceService) { }
+
+  endpoint = 'http://localhost:8080/Auth/signUp'
+
+  form: any = {
+    data: {},
+    message: "",
+    inputerror: {}
+  }
+
+  signUp() {
+    let self = this;
+    console.log('res', this.form.data);
+
+    this.httpService.post(this.endpoint, this.form.data, function (res: any) {
+      console.log("response: ", res);
+
+      if (!res.success && res.result.inputerror) {
+        self.form.inputerror = res.result.inputerror;
+      }
+
+      if (!res.success && res.result.message) {
+        self.form.message = res.result.message
+      }
+
+      if (res.success) {
+        self.form.message = res.result.message
+      }
+    })
+
+  }
 
 }
