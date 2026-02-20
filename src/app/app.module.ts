@@ -9,7 +9,9 @@ import { FooterComponent } from './footer/footer.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { HttpServiceService } from './http-service.service';3
+import { HttpServiceService } from './http-service.service';
+import { UserComponent } from './user/user.component';
+import { UserListComponent } from './user/user-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { HttpServiceService } from './http-service.service';3
     FooterComponent,
     SignupComponent,
     LoginComponent,
+    UserComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
