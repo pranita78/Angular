@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpServiceService } from './http-service.service';
 import { UserComponent } from './user/user.component';
 import { UserListComponent } from './user/user-list.component';
+import { RoleComponent } from './role/role.component';
+import { RoleListComponent } from './role/role-list.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { UserListComponent } from './user/user-list.component';
     LoginComponent,
     UserComponent,
     UserListComponent,
+    RoleComponent,
+    RoleListComponent,
   ],
   imports: [
     BrowserModule,
